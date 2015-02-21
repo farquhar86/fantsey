@@ -1,0 +1,20 @@
+<div class="jumbotron center">
+	<h1>This is Fantsey Pay</h1>
+	<% if user_signed_in? %>
+	<p>
+		<%= link_to "New League", new_league_path, class: "btn btn-default btn-lg btn-block" %> 
+		<%= link_to "View League", view_league_path, class: "btn btn-primary btn-lg btn-block" %>
+	</p>
+	<p> 
+	</p>
+	<p>
+		<%= link_to "Profile", edit_user_registration_path , class: "btn btn-default btn-lg btn-block" %> 
+		<%= link_to "Friends", friends_path, class: "btn btn-primary btn-lg btn-block" %>
+	</p>
+	<% else %>	
+	<p>
+		<%= link_to "Login", new_user_session_path, class: "btn btn-default btn-lg" %> 
+		<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+	</p>
+	<% end %>
+</div>

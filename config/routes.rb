@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root 'pages#home'
+  get "about" => "pages#about"
+  get "new_league" => "pages#new_league"
+  get "view_league" => "pages#view_league"
+  get "friends" => "pages#friends"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  # Example of regular route:
+  # Example of regular route:how
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
