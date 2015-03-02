@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221010838) do
+ActiveRecord::Schema.define(version: 20150222034737) do
+
+  create_table "leagues", force: :cascade do |t|
+    t.string   "league_name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.decimal  "buy_in_amount"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -1,0 +1,12 @@
+
+
+<p>
+  <strong>League name:</strong>
+  <%= @league.league_name %>
+</p>
+<p>
+  <strong>Buy In Amount:</strong>
+  <%= @league.buy_in_amount %>
+</p>
+<%= link_to 'Edit', edit_league_path(@league) %> |
+<%= link_to 'Back', leagues_path %>
