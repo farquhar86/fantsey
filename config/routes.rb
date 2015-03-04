@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :leagues
 
   devise_for :users
-  root 'pages#home'
+  root 'leagues#index'
   get "about" => "pages#about"
   get "new_league" => "pages#new_league"
   get "view_league" => "pages#view_league"

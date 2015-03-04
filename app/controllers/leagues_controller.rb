@@ -2,7 +2,7 @@ class LeaguesController < ApplicationController
   before_action :set_league, only: [:show, :edit, :update, :destroy]
 
   def index
-    @leagues = League.all
+    @leagues = League.all.order "created_at DESC"
   end
 
   def show
@@ -23,10 +23,7 @@ class LeaguesController < ApplicationController
         render action: 'new' 
       end
     end
- 
 
-  # PATCH/PUT /leagues/1
-  # PATCH/PUT /leagues/1.json
   def update
       if @league.update(league_params)
         redirect_to @league, notice: 'League was successfully updated.'
@@ -35,8 +32,6 @@ class LeaguesController < ApplicationController
       end
     end
 
-  # DELETE /leagues/1
-  # DELETE /leagues/1.json
   def destroy
     @league.destroy
     redirect_to leagues_url
