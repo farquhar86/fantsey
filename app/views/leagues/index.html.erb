@@ -1,9 +1,15 @@
-<%= render 'pages/home' %>
 <div class="jumbotron center">
+  <h1>This is Fantasy Pay</h1>
+  <h3> Start a new league or check on a current one </h3>
+
 <% if user_signed_in? %>
+<div class="jumbotron center">
+
+<%= link_to "New League", new_league_path, class: "btn btn-primary btn-lg btn-block" %> 
+<p></p>
 
 <div id="box">
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>League name</th>
@@ -16,12 +22,11 @@
   <tbody>
     <% @leagues.each do |league| %>
       <tr>
-        <td><%= league.league_name %></td>
+        <td><%= link_to league.league_name, league %></td>
         <td><%= league.buy_in_amount %></td>
         <td><%= '#' %></td>
-        <td><%= link_to 'Show', league %></td>
-        <td><%= link_to 'Edit', edit_league_path(league) %></td>
-        <td><%= link_to 'Delete', league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to raw('<span class="glyphicon glyphicon-edit"></span>'), edit_league_path(league) %></td>
+        <td><%= link_to raw('<span class="glyphicon glyphicon-trash"></span>'), league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +35,11 @@
 <br
 </div>
 
-<% end %>
+<% else %>
+  <h2>The easiest way to make sure all your friends buyin to your fantasy league. </h2> 
+  <h3> Sign up or login to create a new leage.</h3>
+  <p>
+    <%= link_to "Login", new_user_session_path, class: "btn btn-default btn-lg" %> 
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+  </p>
+  <% end %>
