@@ -1,9 +1,10 @@
-<div class="jumbotron center">
-  <h1>This is Fantasy Pay</h1>
-  <h3> Start a new league or check on a current one </h3>
 
 <% if user_signed_in? %>
 <div class="jumbotron center">
+  <h1>This is Fantasy Pay</h1>
+<h3> Start a new league or check on a current one </h3>
+<p></p>
+<p></p>
 
 <%= link_to "New League", new_league_path, class: "btn btn-primary btn-lg btn-block" %> 
 <p></p>
@@ -36,6 +37,8 @@
 </div>
 
 <% else %>
+<div class="jumbotron center">
+  <h1>This is Fantasy Pay</h1>
   <h2>The easiest way to make sure all your friends buyin to your fantasy league. </h2> 
   <h3> Sign up or login to create a new leage.</h3>
   <p>
